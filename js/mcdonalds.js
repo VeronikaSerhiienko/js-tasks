@@ -22,7 +22,7 @@ function showResults(result, text1, text2) {
 
 function yourOrderIs(amountOfMoney) {
   var result;
-  if (amountOfMoney > 100) {
+  if (amountOfMoney >= 100) {
     result = confirm("You can buy BigMacMenu. Wish?");
     showResults(result, "Your order is BigMacMenu", "You do not order anything");
   }  
