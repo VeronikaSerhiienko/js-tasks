@@ -3,36 +3,36 @@ function isCorrectTime(n) {
   return !isNaN(nNumber) && (nNumber >= 0) && (nNumber <= 23);
 }
 
-var saleStartTime = prompt ("When sale starts?","9");
+var saleStartTime = prompt("When sale starts?","9");
 
 while (!isCorrectTime(saleStartTime)) {
-  saleStartTime = prompt ("Please, enter time again. When sale starts?","9");
+  saleStartTime = prompt("Please, enter time again. When sale starts?","9");
 }
 
-var saleEndTime = prompt ("When sale ends?","13");
+var saleEndTime = prompt("When sale ends?","13");
 
 while (!isCorrectTime(saleEndTime)) {
-  saleEndTime = prompt ("Please, enter time again. When sale ends?","9");
+  saleEndTime = prompt("Please, enter time again. When sale ends?","9");
 }
 
 var currentTime = prompt ("What time is it?","");
 while (!isCorrectTime(currentTime)) {
-  currentTime = prompt ("Please, enter time again. What time is it?","");
+  currentTime = prompt("Please, enter time again. What time is it?","");
 }
 
 function isDiscount(saleStartTime,saleEndTime,currentTime) {
   if (saleStartTime < saleEndTime){
-    if(currentTime >=saleStartTime && currentTime <=saleEndTime) {
-      console.log ("You will have a discount");
+    if(currentTime >= saleStartTime && currentTime <= saleEndTime) {
+      console.log("You will have a discount");
     }
     else {
-      console.log ("You will not have a discount");
+      console.log("You will not have a discount");
     }
   } else {
-    if(currentTime >=saleStartTime || currentTime <=saleEndTime) {
-      console.log ("You will have a discount");
+    if(currentTime >= saleStartTime || currentTime <= saleEndTime) {
+      console.log("You will have a discount");
     } else {
-      console.log ("You will not have a discount");
+      console.log("You will not have a discount");
     }
   }
 }
