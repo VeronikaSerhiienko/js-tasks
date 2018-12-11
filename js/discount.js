@@ -16,20 +16,25 @@ while (!isCorrectTime(saleEndTime)) {
 }
 
 var currentTime = prompt ("What time is it?","");
+
 while (!isCorrectTime(currentTime)) {
   currentTime = prompt("Please, enter time again. What time is it?","");
 }
 
-function isDiscount(saleStartTime,saleEndTime,currentTime) {
-  if (saleStartTime < saleEndTime){
-    if(currentTime >= saleStartTime && currentTime <= saleEndTime) {
+function isDiscount(saleStartTime, saleEndTime, currentTime) {
+  var numSaleStartTime = Number(saleStartTime);
+  var numCurrentTime = Number(currentTime);
+  var numSaleEndTime = Number(saleEndTime); 
+
+  if (numSaleStartTime < numSaleEndTime) {
+    if(numCurrentTime >= numSaleStartTime && numCurrentTime <= numSaleEndTime) {
       console.log("You will have a discount");
     }
     else {
       console.log("You will not have a discount");
     }
   } else {
-    if(currentTime >= saleStartTime || currentTime <= saleEndTime) {
+    if((numCurrentTime >= numSaleStartTime) || (numCurrentTime <= numSaleEndTime)) {
       console.log("You will have a discount");
     } else {
       console.log("You will not have a discount");
@@ -37,4 +42,4 @@ function isDiscount(saleStartTime,saleEndTime,currentTime) {
   }
 }
 
-isDiscount(saleStartTime,saleEndTime,currentTime);
+isDiscount(saleStartTime, saleEndTime, currentTime);

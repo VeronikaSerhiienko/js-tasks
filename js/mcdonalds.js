@@ -10,13 +10,10 @@ while (!isCorrectAmount(amountOfMoney)) {
 }
 
 function showResults(result, text1, text2) {
-  switch (result) {
-    case true :
+  if (result) {
     console.log(text1);
-    break;
-    case false :
+  } else {
     console.log(text2);
-    break;
   }
 }
 
@@ -26,15 +23,15 @@ function yourOrderIs(amountOfMoney) {
     result = confirm("You can buy BigMacMenu. Wish?");
     showResults(result, "Your order is BigMacMenu", "You do not order anything");
   }  
-  else if (amountOfMoney >= 50 && amountOfMoney < 100) {
+  else if (amountOfMoney >= 50) {
     result = confirm("You can buy hamburger and french fries. Wish?");
     showResults(result, "Your order is hamburger and french fries", "You do not order anything");
   } 
-  else if (amountOfMoney < 50 && amountOfMoney >= 20) {
+  else if (amountOfMoney >= 20) {
     result = confirm("you can buy coca cola. Wish?");
     showResults(result, "Your order is coca cola", "You do not order anything"); 
   } 
-  else if (amountOfMoney < 20) {
+  else {
     result = console.log("Sorry we do not have dishes for you here");
     console.log("You do not order anything");
   }  
